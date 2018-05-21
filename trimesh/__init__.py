@@ -23,3 +23,5 @@ from .io.load import load_mesh, load_path, load, available_formats
 
 from . import transformations
 from . import primitives
+
+print("This is the new Trimesh")
