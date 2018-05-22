@@ -66,7 +66,7 @@ class SceneViewer(pyglet.window.Window):
         for name, mesh in scene.geometry.items():
             self.add_geometry(name=name,
                               geometry=mesh)
-        self.init_gl(on_init)
+        self.init_gl(on_init, **kwargs)
         self.set_size(*resolution)
         self.update_flags()
 
