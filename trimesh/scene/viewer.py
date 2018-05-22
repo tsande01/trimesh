@@ -150,7 +150,7 @@ class SceneViewer(pyglet.window.Window):
                     self.view[k] = v
         self.update_flags()
 
-    def init_gl(self, on_init=None):
+    def init_gl(self, on_init=None, **kwargs):
         gl.glClearColor(.97, .97, .97, 1.0)
         max_depth = (np.abs(self.scene.bounds).max(axis=1) ** 2).sum() ** .5
         max_depth = np.clip(max_depth, 500.00, np.inf)
@@ -202,7 +202,7 @@ class SceneViewer(pyglet.window.Window):
         gl.glPointSize(4)
 
         if on_init:
-            on_init(gl)
+            on_init(gl, **kwargs)
 
     def toggle_culling(self):
         self.view['cull'] = not self.view['cull']
